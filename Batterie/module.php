@@ -90,7 +90,7 @@ class Batterie extends IPSModule {
 	}
 
 	// Berechnung der jeweiligen Jahreswerte
-	private function RollierenderJahreswert(Integer $VariableID) {
+	private function RollierenderJahreswert($VariableID) {
 		//Den Datensatz von vor 365 Tagen abfragen (zur Berücksichtigung von Schaltjahren)
 		$historischeWerte = AC_GetLoggedValues($this->ReadPropertyInteger("Archiv"), $VariableID , time()-1000*24*60*60, time()-365*24*60*60, 1);
 		$wertVor365d = 0;
